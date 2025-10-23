@@ -5,6 +5,7 @@
     border-style: none;
 }
 
+
 @font-face {
     font-family: 'montserrat';
     src: url('../fonts/Montserrat-Regular.ttf');
@@ -14,9 +15,31 @@
     border: none;
 } */
 
-header img {
-    width: 50px;
+header {
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    /* background: blue; */
+    list-style: none;
+    border-radius: 50px;
+    box-shadow: 0 0 20px 7px rgba(219, 219, 219, 1);
     height: 50px;
+}
+
+header nav {
+    padding: 10px;
+    display: flex;
+}
+
+header nav li {
+    padding-left: 20px;
+    padding-right:20px;
+}
+
+
+header img {
+    width: auto;
+    height:30px;
 }
 
 .car-cart a {
@@ -32,7 +55,20 @@ footer {
     background: rgba(0, 72, 255, 1);
     color: white;
     bottom: 0;
+    /* width: 50px; */
+    height: 200px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    /* display: inline; */
+    text-align: center;
+    padding: 20px;
 }
+
+
+
+
 
 .car-cart-container {
     display: flex;
@@ -44,13 +80,40 @@ footer {
     margin: 50px;
 }
 
+.img-reg-container {
+    text-align: center;
+    margin: 20px;
+    margin-top: 2px;
+}
+
 .form-style-auth {
     text-align: center;
     /* background: blue; */
     box-shadow: 0 0 20px 7px rgba(219, 219, 219, 1);
-    height: 350px;
-    width: 400px;
-    border-radius: 50px;
+    /* height: 350px; */
+    /* width: 400px; */
+    border-radius: 30px;
+}
+
+.form-style-reg {
+    text-align: center;
+    /* background: blue; */
+    box-shadow: 0 0 20px 7px rgba(219, 219, 219, 1);
+    /* height: px; */
+    width: 320px;
+    border-radius: 30px;
+}
+
+.input-reg {
+    background: rgba(228, 225, 225, 1);
+    border-radius: 15px;
+    width: 200px;
+    /* height: 10x; */
+    text-align: left;
+    /* display */
+    /* left: 20px; */
+    padding: 15px;
+    transition: all 0.1s ease;
 }
 
 input {
@@ -65,11 +128,13 @@ input {
     appearance: none;
 }
 
-.form-style-auth input {
+.input-auth {
     background: rgba(228, 225, 225, 1);
-    border-radius: 50px;
-    width: 300px;
+    border-radius: 15px;
+    width: 250px;
     height: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
     text-align: left;
     /* display */
     /* left: 20px; */
@@ -77,12 +142,13 @@ input {
     transition: all 0.1s ease;
 }
 
-.form-style-auth input:focus {
-    outline: 2px solid blue;
+input:focus {
+    outline: 2px solid rgba(0, 72, 255, 1);
 }
 
 .form-style-item {
     margin: 20px;
+    font-size: 16px;
 }
 
 .auth-container {
@@ -95,7 +161,7 @@ input {
     background: rgba(228, 225, 225, 1);
     width: 150px;
     height: 50px;
-    border-radius: 50px;
+    border-radius: 15px;
     margin: 10px;
     transition: all 0.4s ease;
 }
@@ -103,50 +169,69 @@ input {
 #button-redirect:hover {
     background: rgba(0, 72, 255, 1);
     color: white;
-    
+
 }
 
 .checkbox-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
 }
 
 .remember-checkbox {
-  display: none;
+    display: none;
 }
 
 .remember-label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 14px;
-  color: rgba(66, 66, 66, 1);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: rgba(66, 66, 66, 1);
 }
 
 .checkbox-custom {
-  width: 18px;
-  height: 18px;
-  border: 2px solid rgba(228, 225, 225, 1);
-  border-radius: 50%;
-  margin-right: 8px;
-  position: relative;
-  transition: border-color 0.3s;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(228, 225, 225, 1);
+    background: rgba(228, 225, 225, 1);
+    border-radius: 30%;
+    margin-right: 8px;
+    position: relative;
+    transition: border-color 0.3s;
 }
 
-.remember-checkbox:checked + .remember-label .checkbox-custom {
-  border-color: rgba(0, 72, 255, 1);
+.remember-checkbox:checked+.remember-label .checkbox-custom {
+    border-color: rgba(0, 72, 255, 1);
 }
 
-.remember-checkbox:checked + .remember-label .checkbox-custom::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
-  background: rgba(0, 72, 255, 1);
-  border-radius: 50%;
+.remember-checkbox:checked+.remember-label .checkbox-custom::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 72, 255, 1);
+    border-radius: 30%;
+}
+
+.form-link {
+    margin: 10px;
+    font-size: 20px;
+    /* text-decoration: none; */
+    /* font-style: none; */
+}
+
+.form-link a {
+    color: rgba(0, 72, 255, 1);
+    /* font-style: none; */
+    text-decoration: none;
+    /* transition: all 1s ease; */
+}
+
+.form-link a:hover {
+    text-decoration: underline;
 }

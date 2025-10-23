@@ -8,25 +8,52 @@
   </head>
   <body>
     <main>
-      <div class="img-auth-container">
+      <div class="img-reg-container">
         <a href="index.html"
           ><img src="web\images\svg\logo_black.svg" alt="Логотип"
         /></a>
       </div>
 
       <div class="auth-container">
-        <form class="form-style-auth" action="#" method="post">
-          
+        <form class="form-style-reg" action="#" method="post">
           <div class="form-style-item">
-            <h2>Авторизация</h2>
+            <h1>Регистрация</h1>
           </div>
 
           <div class="form-style-item">
-            <input class="input-auth" type="text" name="login" placeholder="Логин" />
+            <input
+              class="input-reg"
+              type="text"
+              name="login"
+              placeholder="Логин"
+            />
           </div>
 
           <div class="form-style-item">
-            <input class="input-auth" type="password" name="password" placeholder="Пароль" />
+            <input
+              class="input-reg"
+              type="email"
+              name="email"
+              placeholder="Почта"
+            />
+          </div>
+
+          <div class="form-style-item">
+            <input
+              class="input-reg"
+              type="password"
+              name="password"
+              placeholder="Пароль"
+            />
+          </div>
+
+          <div class="form-style-item">
+            <input
+              class="input-reg"
+              type="password"
+              name="password_repeat"
+              placeholder="Повторите пароль"
+            />
           </div>
 
           <div class="form-style-item checkbox-container">
@@ -43,7 +70,7 @@
         </form>
       </div>
       <div class="form-link">
-        <a href="reg.html">Нет аккаунта?</a>
+        <a href="auth.html">Есть аккаунт?</a>
       </div>
     </main>
 
