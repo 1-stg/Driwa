@@ -10,140 +10,296 @@
   <body>
     <header>
       <nav>
-        <li class="header-left">
-          <a href="index.html"
-            ><img
-              class="logo-header"
-              src="web\images\svg\logo_black.svg"
-              alt="Логотип"
-          /></a>
-        </li>
-        <li>
-          <a href="chat.html"
-            ><img src="web\images\svg\chat.svg" alt="Чат"
-          /></a>
-        </li>
-        <li>
-          <a href="favorite.html"
-            ><img src="web\images\svg\favorite.svg" alt="Избранные"
-          /></a>
-        </li>
-        <li>
-          <a href="auth.html"
-            ><img src="web\images\svg\profile.svg" alt="Профиль"
-          /></a>
-        </li>
+        <div class="header-left">
+          <li>
+            <a href="index.html"
+              ><img
+                class="header-img"
+                src="web\images\svg\logo_black.svg"
+                alt="Главная"
+            /></a>
+          </li>
+        </div>
+        <div class="header-right">
+          <li>
+            <a href="#"
+              ><img class="header-img" src="web\images\svg\chat.svg" alt="Чаты"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                class="header-img"
+                src="web\images\svg\favorite.svg"
+                alt="Избранные"
+            /></a>
+          </li>
+          <li>
+            <a href="auth.html"
+              ><img
+                class="header-img"
+                src="web\images\svg\profile.svg"
+                alt="Профиль"
+            /></a>
+          </li>
+        </div>
       </nav>
     </header>
 
     <main>
-      <div class="search-filters-container">
-        <div class="search">
+      <div class="search-filter-container">
+        <div class="search-container">
           <form action="#" method="get">
-            <input id="search" name="search_input" type="text" />
+            <input
+              class="search-input"
+              name="search_input"
+              type="text"
+              placeholder="Найти машину"
+            />
             <button type="submit">
-              <label for="search"
-                ><img src="web\images\svg\search_icon.svg" alt="Поиск"
-              /></label>
+              <img
+                class="search-icon"
+                src="web\images\svg\search_icon.svg"
+                alt="Поиск"
+              />
             </button>
           </form>
         </div>
 
         <div class="filter">
-          <button type="button">Фильтр</button>
+          <button class="filter-button" type="button">Фильтр</button>
+        </div>
+      </div>
+
+      <!-- Главная -->
+
+      <div class="car-cart-container">
+        <div class="car-cart">
+          <a href="car_details.html?car=1">
+            <div class="car-cart-img">
+              <img src="web\images\png\audi_r8.png" alt="Audi R8" />
+            </div>
+            <div class="car-cart-text">
+              <h2>Audi R8</h2>
+              <p class="car-cart-price">6.000.000 Р</p>
+              <p class="car-cart-mileage">10.000 КМ</p>
+            </div>
+          </a>
         </div>
 
-        <!-- Главная -->
-        <main>
-          <div class="car-cart-container">
-            <div class="car-cart">
-              <a href="car_details.html?car=1">
-                <div class="car-cart-img">
-                  <img src="web\images\png\audi_r8.png" alt="Audi R8" />
-                </div>
-                <h2>Audi R8</h2>
-                <p class="car-cart-price">6.000.000 Р</p>
-                <p class="car-cart-mileage">10.000 КМ</p>
-              </a>
+        <div class="car-cart">
+          <a href="car_details.html?car=2">
+            <div class="car-cart-img">
+              <img src="web\images\png\bmw_m4.png" alt="Bmw M4" />
             </div>
-
-            <div class="car-cart">
-              <a href="car_details.html?car=2">
-                <div class="car-cart-img">
-                  <img src="web\images\png\bmw_m4.png" alt="Bmw M4" />
-                </div>
-                <h2>Bmw M4</h2>
-                <p class="car-cart-price">4.000.000 Р</p>
-                <p class="car-cart-mileage">50.000 КМ</p>
-              </a>
+            <div class="car-cart-text">
+              <h2>Bmw M4</h2>
+              <p class="car-cart-price">4.000.000 Р</p>
+              <p class="car-cart-mileage">50.000 КМ</p>
             </div>
+          </a>
+        </div>
 
-            <div class="car-cart">
-              <a href="car_details.html?car=3">
-                <div class="car-cart-img">
-                  <img src="web\images\png\toyota_rav4.png" alt="Toyota Rav4" />
-                </div>
-                <h2>Toyota RAV4</h2>
-                <p class="car-cart-price">10.000.000 Р</p>
-                <p class="car-cart-mileage">30.000 КМ</p>
-              </a>
+        <div class="car-cart">
+          <a href="car_details.html?car=3">
+            <div class="car-cart-img">
+              <img src="web\images\png\toyota_rav4.png" alt="Toyota Rav4" />
             </div>
-
-            <div class="car-cart">
-              <a href="car_details.html?car=4">
-                <div class="car-cart-img">
-                  <img
-                    src="web\images\png\mclaren_720s.png"
-                    alt="Mclaren 720s"
-                  />
-                </div>
-                <h2>Mclaren 720s</h2>
-                <p class="car-cart-price">20.000.000 Р</p>
-                <p class="car-cart-mileage">1.000 КМ</p>
-              </a>
+            <div class="car-cart-text">
+              <h2>Toyota RAV4</h2>
+              <p class="car-cart-price">10.000.000 Р</p>
+              <p class="car-cart-mileage">30.000 КМ</p>
             </div>
+          </a>
+        </div>
 
-            <div class="car-cart">
-              <a href="car_details.html?car=5">
-                <div class="car-cart-img">
-                  <img
-                    src="web\images\png\porsche_panamera.png"
-                    alt="Porsche panamera"
-                  />
-                </div>
-                <h2>Porsche Panamera</h2>
-                <p class="car-cart-price">10.000.000 Р</p>
-                <p class="car-cart-mileage">45.000 КМ</p>
-              </a>
+        <div class="car-cart">
+          <a href="car_details.html?car=4">
+            <div class="car-cart-img">
+              <img src="web\images\png\mclaren_720s.png" alt="Mclaren 720s" />
             </div>
-
-            <div class="car-cart">
-              <a href="car_details.html?car=6">
-                <div class="car-cart-img">
-                  <img src="web\images\png\vaz_2107.png" alt="Vaz 2107" />
-                </div>
-                <h2>Lada (ВАЗ) 2107</h2>
-                <p class="car-cart-price">100.000 Р</p>
-                <p class="car-cart-mileage">200.000 КМ</p>
-              </a>
+            <div class="car-cart-text">
+              <h2>Mclaren 720s</h2>
+              <p class="car-cart-price">20.000.000 Р</p>
+              <p class="car-cart-mileage">1.000 КМ</p>
             </div>
+          </a>
+        </div>
 
-            <div class="car-cart">
-              <a href="car_details.html?car=7">
-                <div class="car-cart-img">
-                  <img
-                    src="web\images\png\nissan_skyline.png"
-                    alt="Nissan skyline"
-                  />
-                </div>
-                <h2>Nissan Skyline</h2>
-                <p class="car-cart-price">1.500.000 Р</p>
-                <p class="car-cart-mileage">131.000 КМ</p>
-              </a>
+        <div class="car-cart">
+          <a href="car_details.html?car=5">
+            <div class="car-cart-img">
+              <img
+                src="web\images\png\porsche_panamera.png"
+                alt="Porsche panamera"
+              />
             </div>
-          </div>
-        </main>
+            <div class="car-cart-text">
+              <h2>Porsche Panamera</h2>
+              <p class="car-cart-price">10.000.000 Р</p>
+              <p class="car-cart-mileage">45.000 КМ</p>
+            </div>
+          </a>
+        </div>
 
+        <div class="car-cart">
+          <a href="car_details.html?car=6">
+            <div class="car-cart-img">
+              <img src="web\images\png\vaz_2107.png" alt="Vaz 2107" />
+            </div>
+            <div class="car-cart-text">
+              <h2>Lada (ВАЗ) 2107</h2>
+              <p class="car-cart-price">100.000 Р</p>
+              <p class="car-cart-mileage">200.000 КМ</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="car-cart">
+          <a href="car_details.html?car=7">
+            <div class="car-cart-img">
+              <img
+                src="web\images\png\nissan_skyline.png"
+                alt="Nissan skyline"
+              />
+            </div>
+            <div class="car-cart-text">
+              <h2>Nissan Skyline</h2>
+              <p class="car-cart-price">1.500.000 Р</p>
+              <p class="car-cart-mileage">131.000 КМ</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Карточки -->
+
+        <div class="car-cart">
+          <a href="car_details.html?car=1">
+            <div class="car-cart-img">
+              <img src="web\images\png\audi_r8.png" alt="Audi R8" />
+            </div>
+            <div class="car-cart-text">
+              <h2>Audi R8</h2>
+              <p class="car-cart-price">6.000.000 Р</p>
+              <p class="car-cart-mileage">10.000 КМ</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="car-cart">
+          <a href="car_details.html?car=2">
+            <div class="car-cart-img">
+              <img src="web\images\png\bmw_m4.png" alt="Bmw M4" />
+            </div>
+            <div class="car-cart-text">
+              <h2>Bmw M4</h2>
+              <p class="car-cart-price">4.000.000 Р</p>
+              <p class="car-cart-mileage">50.000 КМ</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="car-cart">
+          <a href="car_details.html?car=3">
+            <div class="car-cart-img">
+              <img src="web\images\png\toyota_rav4.png" alt="Toyota Rav4" />
+            </div>
+            <div class="car-cart-text">
+              <h2>Toyota RAV4</h2>
+              <p class="car-cart-price">10.000.000 Р</p>
+              <p class="car-cart-mileage">30.000 КМ</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="car-cart">
+          <a href="car_details.html?car=4">
+            <div class="car-cart-img">
+              <img src="web\images\png\mclaren_720s.png" alt="Mclaren 720s" />
+            </div>
+            <div class="car-cart-text">
+              <h2>Mclaren 720s</h2>
+              <p class="car-cart-price">20.000.000 Р</p>
+              <p class="car-cart-mileage">1.000 КМ</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="car-cart">
+          <a href="car_details.html?car=5">
+            <div class="car-cart-img">
+              <img
+                src="web\images\png\porsche_panamera.png"
+                alt="Porsche panamera"
+              />
+            </div>
+            <div class="car-cart-text">
+              <h2>Porsche Panamera</h2>
+              <p class="car-cart-price">10.000.000 Р</p>
+              <p class="car-cart-mileage">45.000 КМ</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="car-cart">
+          <a href="car_details.html?car=6">
+            <div class="car-cart-img">
+              <img src="web\images\png\vaz_2107.png" alt="Vaz 2107" />
+            </div>
+            <div class="car-cart-text">
+              <h2>Lada (ВАЗ) 2107</h2>
+              <p class="car-cart-price">100.000 Р</p>
+              <p class="car-cart-mileage">200.000 КМ</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="car-cart">
+          <a href="car_details.html?car=7">
+            <div class="car-cart-img">
+              <img
+                src="web\images\png\nissan_skyline.png"
+                alt="Nissan skyline"
+              />
+            </div>
+            <div class="car-cart-text">
+              <h2>Nissan Skyline</h2>
+              <p class="car-cart-price">1.500.000 Р</p>
+              <p class="car-cart-mileage">131.000 КМ</p>
+            </div>
+          </a>
+        </div>
+                <div class="car-cart">
+          <a href="car_details.html?car=6">
+            <div class="car-cart-img">
+              <img src="web\images\png\vaz_2107.png" alt="Vaz 2107" />
+            </div>
+            <div class="car-cart-text">
+              <h2>Lada (ВАЗ) 2107</h2>
+              <p class="car-cart-price">100.000 Р</p>
+              <p class="car-cart-mileage">200.000 КМ</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="car-cart">
+          <a href="car_details.html?car=7">
+            <div class="car-cart-img">
+              <img
+                src="web\images\png\nissan_skyline.png"
+                alt="Nissan skyline"
+              />
+            </div>
+            <div class="car-cart-text">
+              <h2>Nissan Skyline</h2>
+              <p class="car-cart-price">1.500.000 Р</p>
+              <p class="car-cart-mileage">131.000 КМ</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-container">
         <footer>
           <div class="logos-footer">
             <img src="web\images\svg\telegram.svg" alt="Наш телеграм" />
@@ -156,9 +312,9 @@
             <p>&copy; Все права защищены. 2025</p>
           </div>
         </footer>
-
-        <script src="web\js\script.js"></script>
       </div>
+
+      <script src="web\js\script.js"></script>
     </main>
   </body>
 </html>
