@@ -4,10 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="web\css\styles.css" />
+  <link rel="icon" href="web\images\svg\favicon.svg" type="image/svg+xml">
+  <title>DRIWA - Главная</title>
+  <link href="web\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="web/css/styles.css" />
   <link rel="stylesheet" href="web/css/index.css" />
   <script src="web/js/car_carts.js" defer></script>
+  <script src="web/js/favorite.js" defer></script>
+  <script src="web/js/search.js" defer></script>
 </head>
 
 <body>
@@ -18,38 +22,46 @@
           <a href="index.html"><img class="header-img" src="web\images\svg\logo_black.svg" alt="Главная" /></a>
         </li>
       </div>
-
-      <div class="header-center">
-        <li>
-          <form action="#" method="get">
-            <div class="search-header">
-              <input class="search-input" name="search_input" type="text" placeholder="Найти машину" minlength="1"
-                maxlength="200" required />
-              <button type="submit">
-                <img class="search-icon" src="web\images\svg\search_icon.svg" alt="Поиск" />
-              </button>
-            </div>
-          </form>
-        </li>
-      </div>
-
       <div class="header-right">
         <li>
           <a href="#"><img class="header-img" src="web\images\svg\chat.svg" alt="Чаты" /></a>
         </li>
         <li>
-          <a href="#"><img class="header-img" src="web\images\svg\favorite.svg" alt="Избранные" /></a>
+          <a href="#"><img id="favorite-button" class="header-img" src="web\images\svg\favorite.svg"
+              alt="Избранные" /></a>
         </li>
         <li>
-          <a href="auth.html"><img class="header-img" src="web\images\svg\profile.svg" alt="Профиль" /></a>
+          <div class="dropdown">
+            <button class="button-clear" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <img class="header-img" src="web\images\svg\profile.svg" alt="Профиль" />
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="reg.html">Зарегестрироваться</a></li>
+              <li><a class="dropdown-item" href="auth.html">Войти</a></li>
+              <li><a class="dropdown-item" href="profile.html">Профиль</a></li>
+            </ul>
+          </div>
         </li>
       </div>
     </nav>
   </header>
 
   <main>
-    <div class="filter">
-      <button class="filter-button" type="button">Фильтры</button>
+
+    <div class="chat">
+      <div class="chat__modal">
+        <div class="chat__modal"></div>
+      </div>
+    </div>
+
+    <div class="search-filter-container">
+      <form action="index.html" method="get" class="search-form">
+        <input class="search-input" name="search_input" type="text" placeholder="Найти машину" minlength="1"
+          maxlength="200" required />
+        <img class="search-img" src="web\images\svg\search_icon.svg" alt="Поиск" />
+      </form>
+      <button type="button" class="filter-button">Фильтры</button>
     </div>
 
     <!-- Главная -->
@@ -73,6 +85,7 @@
     </div>
 
     <script src="web\js\script.js"></script>
+    <script src="web\bootstrap\js\bootstrap.bundle.min.js"></script>
   </main>
 </body>
 

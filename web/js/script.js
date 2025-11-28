@@ -6,3 +6,4 @@ if (location.href.includes('auth.html') || location.href.includes('reg.html')) {
         location.href = "http://127.0.0.1:5500/index.html"
     })
 }
+

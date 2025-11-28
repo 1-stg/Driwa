@@ -4,11 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <link rel="icon" href="web\images\svg\favicon.svg" type="image/svg+xml">
+  <title>DRIWA - Объявление</title>
+  <link href="web\bootstrap\css\bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="web\css\styles.css" />
   <link rel="stylesheet" href="web/css/car_details.css">
   <script src="web\js\car_carts.js" defer></script>
   <script src="web/js/car_details.js" defer></script>
+  <script src="web/js/favorite.js" defer></script>
 </head>
 
 <body>
@@ -24,10 +27,21 @@
           <a href="#"><img class="header-img" src="web\images\svg\chat.svg" alt="Чаты" /></a>
         </li>
         <li>
-          <a href="#"><img class="header-img" src="web\images\svg\favorite.svg" alt="Избранные" /></a>
+          <a href="#"><img id="favorite-button" class="header-img" src="web\images\svg\favorite.svg"
+              alt="Избранные" /></a>
         </li>
         <li>
-          <a href="auth.html"><img class="header-img" src="web\images\svg\profile.svg" alt="Профиль" /></a>
+          <div class="dropdown">
+            <button class="button-clear" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <img class="header-img" src="web\images\svg\profile.svg" alt="Профиль" />
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="reg.html">Зарегестрироваться</a></li>
+              <li><a class="dropdown-item" href="auth.html">Войти</a></li>
+              <li><a class="dropdown-item" href="profile.html">Профиль</a></li>
+            </ul>
+          </div>
         </li>
       </div>
     </nav>
@@ -36,8 +50,6 @@
 
 
   <main class="car-details-main">
-
-
     <section>
       <div class="car-details">
       </div>
@@ -64,6 +76,7 @@
   </footer>
 
   <script src="web\js\script.js"></script>
+  <script src="web\bootstrap\js\bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

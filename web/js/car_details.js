@@ -1,43 +1,39 @@
-carId = location.href.slice(-1) - 1;
+carId = location.href[location.href.indexOf('car=') + 4] - 1;
 carData = cars[carId];
-console.log(carData);
+let titleNode = document.querySelector(`title`);
+titleNode.innerHTML += ` - ${carData['title']}`;
+
 
 carHtml = document.querySelector(`.car-details`);
 
-carHtml.innerHTML = `<div class="photos-title">
-
-          <div class="title-price">
-
-            <div class="title">
-              <h1>${carData['title']}, ${carData['year']}</h1>
-            </div>
-
-            <div class="price">
-              <h2>${carData['price']}₽</h2>
-            </div>
-
-          </div>
-
+carHtml.innerHTML = `
+        <div class="photos-title">
           <div class="car-details-photos-container">
             <div class="main-img-container">
-              <img class="main-img" src="${carData['image']}" alt="Audi R8">
+              <img class="main-img" src="${carData['images'][0] ?? "web/images/svg/base_photo.svg"}" alt="${carData['title']}">
             </div>
             <div class="car-details-photos-sub-container">
               <div class="sub-img-container">
-                <img class="sub-img left" src="${carData['image']}" alt="Audi R8">
+                <img class="sub-img" src="${carData['images'][1] ?? carData['images'][0] ?? "web/images/svg/base_photo.svg"}" alt="${carData['title']}">
               </div>
               <div class="sub-img-container">
-                <img class="sub-img" src="${carData['image']}" alt="Audi R8">
+                <img class="sub-img" src="${carData['images'][2] ?? carData['images'][0] ?? "web/images/svg/base_photo.svg"}" alt="${carData['title']}}" alt="${carData['title']}">
               </div>
               <div class="sub-img-container">
-                <img class="sub-img right" src="${carData['image']}" alt="Audi R8">
+                <img class="sub-img" src="${carData['images'][3] ?? carData['images'][0] ?? "web/images/svg/base_photo.svg"}" alt="${carData['title']}}" alt="${carData['title']}">
               </div>
             </div>
-
-
+          </div>
+          
+          <div class="title-price">
+            <div class="title">
+              <h1>${carData['title']}, ${carData['year']}</h1>
+            </div>
+            <div class="price">
+              <h2>${carData['price']}₽</h2>
+            </div>
           </div>
         </div>
-
 
         <div class="options-button-container">
           <div class="options-car-details">
@@ -84,5 +80,3 @@ carHtml.innerHTML = `<div class="photos-title">
             <button class="car-details-button" type="button">Написать</button>
           </div>
         </div>`;
-
-// ${carData['ownersCount']} Владельца;

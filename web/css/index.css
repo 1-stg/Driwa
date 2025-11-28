@@ -1,102 +1,82 @@
-/* Поиск в header */
+* {
+    font-size: 20px;
 
-.search-header button {
-    border: none;
+}
+
+.search-filter-container {
+    margin: 0px 20px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* overflow: hidden; */
+}
+
+.search-form {
+    position: relative;
+    flex-basis: 49%;
+    flex-grow: 1;
+    display: flex;
+}
+
+.search-img {
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    width: 58px;
+    cursor: pointer;
+}
+
+.search__button {
     background: none;
 }
 
-.header-forms:hover {
-    transform: translateY(-2px);
-    opacity: 0.75;
+.search-img:hover {
+    transition: all 0.3s ease-in-out;
+    opacity: 0.7;
 }
 
-.header-left {
-    margin-left: 80px;
-}
-
-.search-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin: 0 200px 0 300px;
+.search-img:active {
+    transition: all 0.1s ease-in-out;
+    transform: scale(0.7, 0.7);
 }
 
 .search-input {
-    padding: 12px 300px 12px 20px;
-    background: rgba(219, 219, 219, 1);
+    flex-basis: 100%;
+    flex-grow: 1;
+    background-color: rgb(219, 219, 219);
     border-radius: 20px;
-    width: 400px;
-    /* height: ; */
-    font-size: 26px;
+    padding: 20px 0;
+    text-indent: 20px;
 }
 
 .search-input:focus {
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 16px 2px rgba(219, 219, 219, 1);
     outline: 2px solid rgb(135, 135, 135);
-    box-shadow: 0 0 20px 7px rgba(219, 219, 219, 1);
 }
 
 .search-input:valid {
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    outline: 3px solid rgb(0, 0, 0);
-}
-
-.search-icon {
-    position: absolute;
-    right: 2.5%;
-    top: 9%;
-    width: 45px;
-    border-radius: 15px;
-    /* background: none;
-    border: none; */
-    /* box-shadow: 0 0 20px 7px rgba(219, 219, 219, 1); */
-}
-
-.search-icon:hover {
-    transition: 0.5s;
-    opacity: 0.8;
-    cursor: pointer;
-}
-
-.search-icon:active {
-    transition: all 0.1s;
-    transform: scale(0.7, 0.7);
-}
-
-/* Поиск в header конец */
-
-
-/* Кнопка фильтров */
-
-.filter {
-    margin: 0 50px 30px 50px;
-    display: flex;
-    justify-content: center;
+    outline: 3px solid black;
 }
 
 .filter-button {
-    background: rgba(65, 65, 65, 1);
-    padding: 30px;
-    border-radius: 30px;
-    font-size: 26px;
-    /* display: flex; */
-    /* width: 90%; */
+    flex-grow: 1;
+    flex-basis: 49%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(65, 65, 65, 1);
     color: white;
-    width: 100%;
-
-    /* margin: 50px; */
-}
-
-.filter-button:hover {
-    transition: 0.5s;
-    opacity: 0.8;
     cursor: pointer;
 }
 
-.filter-button:active {
-    transition: all 0.1s;
-    transform: scale(0.7, 0.7);
+.filter-button:hover {
+    transition: all 0.2s ease-in-out;
+    opacity: 0.8;
 }
 
-/* фильтр конец */
+.filter-button:active {
+    transition: all 0.1s ease-in-out;
+    transform: scale(0.7, 0.7);
+}

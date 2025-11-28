@@ -1,3 +1,7 @@
+p {
+    margin: 0;
+}
+
 .car-details {
     display: flex;
     flex-wrap: wrap;
@@ -11,11 +15,21 @@
     flex-direction: column;
 }
 
+h1 {
+    font-weight: bold;
+}
+
+.car-details-photos-container {
+    overflow: hidden;
+    height: 73%;
+    border-radius: 20px;
+}
+
 
 .title-price {
     display: flex;
     justify-content: space-between;
-    margin: 0 50px 30px 50px;
+    margin: 50px 50px 30px 50px;
     align-items: flex-end;
 }
 

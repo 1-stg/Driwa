@@ -169,8 +169,9 @@
     color: black;
     /* height: 70px; */
     border-radius: 25px;
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 24px;
+    cursor: pointer;
 }
 
 #button-redirect:hover {

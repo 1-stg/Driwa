@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="web\images\svg\favicon.svg" type="image/svg+xml">
+    <title>DRIWA - Профиль</title>
+    <link href="web\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="web\css\styles.css">
+    <link rel="stylesheet" href="web/css/profile.css">
+    <script src="web/js/car_carts.js" defer></script>
+    <script src="web/js/favorite.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="header-left">
+                <li>
+                    <a href="index.html"><img class="header-img" src="web\images\svg\logo_black.svg"
+                            alt="Главная" /></a>
+                </li>
+            </div>
+            <div class="header-right">
+                <li>
+                    <a href="#"><img class="header-img" src="web\images\svg\chat.svg" alt="Чаты" /></a>
+                </li>
+                <li>
+                    <a href="#"><img id="favorite-button" class="header-img" src="web\images\svg\favorite.svg"
+                            alt="Избранные" /></a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="button-clear" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img class="header-img" src="web\images\svg\profile.svg" alt="Профиль" />
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="reg.html">Зарегестрироваться</a></li>
+                            <li><a class="dropdown-item" href="auth.html">Войти</a></li>
+                            <li><a class="dropdown-item" href="profile.html">Профиль</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="user">
+            <div class="user__photo__container">
+                <img class="user__photo__container-avatar" src="web\images\png\ford_mustang.png" alt="Ваше фото">
+            </div>
+            <h1 class="user__name">Иван Иванов</h1>
+            <button class="user__edit" type="button">Редактировать</button>
+        </div>
+        <div class="ads">
+            <button class="ads__body">
+                <h2 class="ads__body-title">Мои объявления:</h2>
+                <img class="ads__body-img" src="web/images/svg/add_ads.svg" alt="Добавить объявление">
+                <p class="ads__body-p">Добавить объявление</p>
+            </button>
+        </div>
+    </main>
+
+    <footer></footer>
+
+
+    <script src="web\bootstrap\js\bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
