@@ -17,11 +17,11 @@ favoriteTemplate =
 function closeModal() {
   const modalNode = document.querySelector(`.modal-favorite-container`);
   const backgroundModal = document.querySelector(`.modal-favorite-container-background`);
-  
+
   if (modalNode) {
     modalNode.classList.remove(`is-visible`);
   }
-  
+
   setTimeout(() => {
     if (backgroundModal) {
       backgroundModal.remove();
@@ -37,12 +37,12 @@ function favoriteClick() {
   bodyNode.insertAdjacentHTML(`beforeend`, favoriteTemplate);
   bodyNode.classList.add(`body-modal`);
 
-  let outXNode = document.querySelector(`.modal-title-out-img`)
+  let outXNode = document.querySelector(`.modal-x-container`)
   let modalNode = document.querySelector(`.modal-favorite-container`)
-  
+
   setTimeout(function () {
     modalNode.classList.add(`is-visible`)
-  }, 10);
+  }, 0);
 
   let carCardConteinerNode = document.querySelector(`.modal-favorite-car-card-container`);
   let backgroundModal = document.querySelector(`.modal-favorite-container-background`);

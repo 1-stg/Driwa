@@ -5,15 +5,8 @@
 }
 
 main {
-    padding: 50px;
-    width: 100%;
-    min-height: 80vh;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
+    /* padding: 50px; */
+
 }
 
 .user {
@@ -27,6 +20,18 @@ main {
     gap: 20px;
     border-radius: 20px;
     background: rgba(65, 65, 65, 1);
+}
+
+.user__container {
+    padding: 20px 50px;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .user__photo__container {

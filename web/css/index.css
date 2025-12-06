@@ -28,10 +28,6 @@
     cursor: pointer;
 }
 
-.search__button {
-    background: none;
-}
-
 .search-img:hover {
     transition: all 0.3s ease-in-out;
     opacity: 0.7;

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="web/css/profile.css">
     <script src="web/js/car_carts.js" defer></script>
     <script src="web/js/favorite.js" defer></script>
+    <script src="web/js/chat.js" defer></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
             </div>
             <div class="header-right">
                 <li>
-                    <a href="#"><img class="header-img" src="web\images\svg\chat.svg" alt="Чаты" /></a>
+                    <a href="#"><img id="chatButton" class="header-img" src="web\images\svg\chat.svg" alt="Чаты" /></a>
                 </li>
                 <li>
                     <a href="#"><img id="favorite-button" class="header-img" src="web\images\svg\favorite.svg"
@@ -48,19 +49,21 @@
     </header>
 
     <main>
-        <div class="user">
-            <div class="user__photo__container">
-                <img class="user__photo__container-avatar" src="web\images\png\ford_mustang.png" alt="Ваше фото">
+        <div class="user__container">
+            <div class="user">
+                <div class="user__photo__container">
+                    <img class="user__photo__container-avatar" src="web\images\png\ford_mustang.png" alt="Ваше фото">
+                </div>
+                <h1 class="user__name">Иван Иванов</h1>
+                <button class="user__edit" type="button">Редактировать</button>
             </div>
-            <h1 class="user__name">Иван Иванов</h1>
-            <button class="user__edit" type="button">Редактировать</button>
-        </div>
-        <div class="ads">
-            <button class="ads__body">
-                <h2 class="ads__body-title">Мои объявления:</h2>
-                <img class="ads__body-img" src="web/images/svg/add_ads.svg" alt="Добавить объявление">
-                <p class="ads__body-p">Добавить объявление</p>
-            </button>
+            <div class="ads">
+                <button class="ads__body">
+                    <h2 class="ads__body-title">Мои объявления:</h2>
+                    <img class="ads__body-img" src="web/images/svg/add_ads.svg" alt="Добавить объявление">
+                    <p class="ads__body-p">Добавить объявление</p>
+                </button>
+            </div>
         </div>
     </main>
 

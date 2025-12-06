@@ -145,7 +145,7 @@ const createCarCards = (car, index) => {
   `;
 };
 
-const renderCars = (carsArray, container, times = 1) => {
+const renderCars = (carsArray, container, times) => {
   let html = '';
 
   for (let i = 0; i < times; i++) {
@@ -158,5 +158,5 @@ const renderCars = (carsArray, container, times = 1) => {
 
 const carCartsContainer = document.querySelector('.car-cart-container');
 if (carCartsContainer) {
-  renderCars(cars, carCartsContainer, 1);
+  renderCars(cars, carCartsContainer, 2);
 }

@@ -84,7 +84,3 @@ function createMultiImageCarousel(car, carId, count) {
 }
 
 searchButton.addEventListener('click', search);
-
-document.addEventListener('DOMContentLoaded', function () {
-    search();
-});
