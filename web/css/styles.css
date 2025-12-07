@@ -96,6 +96,7 @@ header nav {
 
 .header-img {
     height: 30px;
+    cursor: pointer;
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -121,11 +122,23 @@ header nav {
     padding: 0;
 }
 
+nav {
+    margin: 0 !important;
+}
 
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
 
+    .header-img {
+        height: 20px;
+    }
 
-
-
+    .header-right {
+        gap: 10px;
+    }
+}
 
 /* хедер конец */
 
@@ -184,8 +197,6 @@ header nav {
     margin: 20px;
 }
 
-
-
 .car-cart a {
     text-decoration: none;
     color: black;
@@ -217,6 +228,28 @@ header nav {
 .carousel-indicators {
     position: absolute;
     top: 215px;
+}
+
+@media (max-width: 768px) {
+    .car-cart-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    
+    .car-cart {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-basis: 49%;
+        flex-grow: 1;
+    }
+
+    .car-cart-img-container {
+        width: 300px;
+        height: 150px;
+    }
 }
 
 /* Карточки машин конец */
@@ -819,19 +852,3 @@ footer {
 }
 
 /* Чат Модальное окно конец */
-
-@media (max-width: 768px) {
-    header {
-        display: flex;
-        justify-content: center;
-        border-radius: 0;
-        box-shadow: none;
-        margin: 0;
-        border-bottom: 1px solid black;
-        margin-bottom: 20px;
-    }
-
-    .header-right img {
-        display: none;
-    }
-}

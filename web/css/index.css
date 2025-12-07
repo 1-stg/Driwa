@@ -13,6 +13,7 @@
     /* overflow: hidden; */
 }
 
+
 .search-form {
     position: relative;
     flex-basis: 49%;
@@ -47,6 +48,8 @@
     text-indent: 20px;
 }
 
+
+
 .search-input:focus {
     transition: all 0.3s ease-in-out;
     box-shadow: 0 0 16px 2px rgba(219, 219, 219, 1);
@@ -75,4 +78,22 @@
 .filter-button:active {
     transition: all 0.1s ease-in-out;
     transform: scale(0.7, 0.7);
+}
+
+@media (max-width: 768px) {
+    .search-input {
+        padding: 10px 0;
+        border-radius: 15px;
+    }
+
+    .search-img {
+        width: 40px;
+        top: 5px;
+        right:6px;
+    }
+
+    .filter-button {
+        padding: 10px;
+        border-radius: 15px;
+    }
 }
