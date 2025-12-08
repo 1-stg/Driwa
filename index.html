@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="web/css/index.css" />
   <script src="web/js/search.js" defer></script>
   <script src="web/js/chat.js" defer></script>
-  <script src="web/js/favorite.js" defer></script>
   <script src="web\js\car_carts.js" defer></script>
+  <script src="web/js/favorite.js" defer></script>
 </head>
 
 <body>
@@ -49,6 +49,8 @@
 
   <main>
 
+
+
     <div class="search-filter-container">
       <form action="index.html" method="get" class="search-form">
         <input class="search-input" name="search_input" type="text" placeholder="Найти машину" minlength="1"
@@ -58,29 +60,38 @@
       <button type="button" class="filter-button">Фильтры</button>
     </div>
 
+
+    <div class="container mt-3 mb-3 px-3">
+      <div id="cars-container" class="row g-2 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 ">
+      </div>
+
+      <div id="no-cars-message" class="text-center mt-5 d-none">
+        <h3>Автомобили не найдены</h3>
+        <p>Попробуйте изменить параметры поиска</p>
+      </div>
+    </div>
+
     <!-- Главная -->
 
-    <div class="car-cart-container">
-    </div>
-
-    <div class="footer-container">
-      <footer>
-        <div class="logos-footer">
-          <img src="web\images\svg\telegram.svg" alt="Наш телеграм" />
-          <img src="web\images\svg\vk.svg" alt="Наш ВК" />
-          <img src="web\images\svg\youtube.svg" alt="Наш Ютуб" />
-        </div>
-
-        <div class="text-footer">
-          <img src="web\images\svg\logo_white.svg" alt="Наш Логотип" />
-          <p>&copy; Все права защищены. 2025</p>
-        </div>
-      </footer>
-    </div>
-
-    <script src="web\js\script.js"></script>
-    <script src="web\bootstrap\js\bootstrap.bundle.min.js"></script>
   </main>
+
+  <div class="footer-container">
+    <footer>
+      <div class="logos-footer">
+        <img src="web\images\svg\telegram.svg" alt="Наш телеграм" />
+        <img src="web\images\svg\vk.svg" alt="Наш ВК" />
+        <img src="web\images\svg\youtube.svg" alt="Наш Ютуб" />
+      </div>
+
+      <div class="text-footer">
+        <img src="web\images\svg\logo_white.svg" alt="Наш Логотип" />
+        <p>&copy; Все права защищены. 2025</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="web\js\script.js"></script>
+  <script src="web\bootstrap\js\bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
