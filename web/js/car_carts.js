@@ -159,16 +159,10 @@ function createCarCard(car) {
     zonesHTML += '</div>';
   }
 
-  const currentYear = new Date().getFullYear();
-  const carYear = parseInt(car.year);
-  const isNewCar = !isNaN(carYear) && (currentYear - carYear) <= 3;
-  // const newBadgeHTML = isNewCar ? '<div class="new-badge">НОВИНКА</div>' : '';
-
   return `
         <div class="col">
             <div class="card car-card" data-car-id="${car.id}">
                 <div class="car-image-wrapper">
-
                     <div class="car-image-slider" data-car-id="${car.id}">
                         ${imagesHTML}
                         ${zonesHTML}
@@ -177,7 +171,7 @@ function createCarCard(car) {
                 </div>
                 
                 <div class="card-body">
-                    <div class"favorite-card-button"></div>
+                    <div class="favorite-card-button"></div>
                     <h5 class="card-title">${formattedPrice}</h5>
                     <p class="card-text car__name">${car.title}</p>
                     <p class="card-text car__year__milage">${car.year} | ${formattedMileage}</p>
@@ -185,13 +179,12 @@ function createCarCard(car) {
                       <img src="web/images/svg/favorite.svg" alt="Добавить в избранные">
                     </div>
                 </div>
-                
             </div>
         </div>
     `;
 }
 
-function renderCars() {
+function renderCars(carsToRender = carsData) {
   const container = document.getElementById('cars-container');
   if (!container) return;
 
@@ -199,19 +192,19 @@ function renderCars() {
 
   container.innerHTML = '';
 
-  if (!carsData || carsData.length === 0) {
+  if (!carsToRender || carsToRender.length === 0) {
     if (noCarsMessage) noCarsMessage.classList.remove('d-none');
     return;
   }
 
   if (noCarsMessage) noCarsMessage.classList.add('d-none');
 
-  carsData.forEach((car, index) => {
-    if (!car.id) car.id = index + 1;
+  carsToRender.forEach((car) => {
     container.innerHTML += createCarCard(car);
   });
 
   initializeSliders();
+  setupCardClickListeners();
 }
 
 function initializeSliders() {
@@ -303,15 +296,66 @@ function setupImageErrorHandling() {
   }, true);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  renderCars();
-  setupImageErrorHandling();
-
-  let links = document.querySelectorAll(`.car-card`)
-  links.forEach((element) => {
-    element.addEventListener(`click`, () => {
-      location.href = `http://127.0.0.1:5500/car_details.html?car=${element.dataset.carId}`
+function setupCardClickListeners() {
+  document.querySelectorAll('.car-card').forEach((element) => {
+    element.addEventListener('click', () => {
+      const carId = element.dataset.carId;
+      location.href = `http://127.0.0.1:5500/car_details.html?car=${carId}`;
     });
-  })
-});
+  });
+}
 
+// ФУНКЦИИ ПОИСКА
+function searchCars() {
+  const searchText = document.querySelector('.search-input')?.value.trim().toLowerCase();
+  
+  if (!searchText || searchText.length < 2) {
+    // Если поиск пустой или слишком короткий, показываем все автомобили
+    renderCars(carsData);
+    return;
+  }
+
+  // Фильтруем автомобили по названию
+  const filteredCars = carsData.filter(car => 
+    car.title.toLowerCase().includes(searchText)
+  );
+
+  // Рендерим отфильтрованные результаты
+  renderCars(filteredCars);
+}
+
+function setupSearch() {
+  const searchButton = document.querySelector('.search-img');
+  const searchInput = document.querySelector('.search-input');
+  
+  if (searchButton && searchInput) {
+    // Поиск по кнопке
+    searchButton.addEventListener('click', searchCars);
+    
+    // Поиск при нажатии Enter
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        searchCars();
+      }
+    });
+    
+    // Сброс поиска при очистке поля
+    searchInput.addEventListener('input', (e) => {
+      if (e.target.value.trim() === '') {
+        renderCars(carsData);
+      }
+    });
+  }
+}
+
+// ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ СТРАНИЦЫ
+document.addEventListener('DOMContentLoaded', function () {
+  // Рендерим все автомобили при загрузке
+  renderCars();
+  
+  // Настраиваем обработку ошибок изображений
+  setupImageErrorHandling();
+  
+  // Настраиваем поиск
+  setupSearch();
+});
