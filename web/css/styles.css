@@ -5,6 +5,12 @@
     /* font-size: 18px; */
 }
 
+*:focus-visible {
+    border-radius: 10px;
+    outline: 3px dashed black;
+    outline-offset: 3px;
+}
+
 
 body {
     scrollbar-gutter: auto;
@@ -189,14 +195,12 @@ nav {
     position: absolute;
     right: 40px;
     bottom: 40px;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
 }
 
 .card:hover .favorite__add img {
     transition: all 0.2s ease;
-    width: 30px;
-    height: 30px;
     filter: invert();
 }
 
@@ -416,6 +420,18 @@ footer {
     align-items: center;
     padding: 15px 10px;
     border-radius: 10px;
+}
+
+#empty-favorites {
+    position: absolute;
+    width: 105%;
+    height: 80%;
+    left:0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 @media (max-width: 768px) {
