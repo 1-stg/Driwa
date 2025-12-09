@@ -367,6 +367,7 @@ function setupFavoriteCardClickListeners() {
 }
 
 function openFavorite() {
+  renderFavoriteCars();
   modalBackgroundNode.classList.toggle(`d-none`);
   setTimeout(() => {
     favoritModalNode.classList.toggle(`is-visible`);
