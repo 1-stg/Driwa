@@ -360,7 +360,7 @@ function setupFavoriteCardClickListeners() {
     card.addEventListener('click', (e) => {
       if (!e.target.closest('.favorite-remove-button')) {
         const carId = card.dataset.carId;
-        location.href = `http://127.0.0.1:5500/car_details.html?car=${carId}`;
+        location.href = `car_details.html?car=${carId}`;
       }
     });
   });
