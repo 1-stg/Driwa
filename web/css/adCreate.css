@@ -1,0 +1,160 @@
+h2 {
+    color: black;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    font-family: "montserrat" !important;
+    border-style: none;
+}
+
+
+.adCreate__input {
+    box-shadow: 0 0 10px 5px rgba(219, 219, 219, 0.226);
+    font-size: 16px;
+    background-color: rgba(219, 219, 219, 1);
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%;
+    color: black;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.adCreate__input:focus {
+    transition: all 0.2s ease-in-out;
+    outline: none;
+    border-color: #666;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.1);
+}
+
+.adCreate__input::placeholder {
+    color: black;
+}
+
+.body__fields {
+    box-shadow: 0 0 10px 5px rgba(219, 219, 219, 0.226);
+    border-radius: 20px;
+}
+
+.image__field__container {
+    height: 100%;
+}
+
+.image__field {
+    cursor: pointer;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(65, 65, 65);
+    /* opacity: 0.5; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.image__field img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.image__field img:hover {
+    transition: all 0.2s ease-in;
+    opacity: 0.7;
+}
+
+.image__field img:active {
+    transition: all 0.1s ease-in;
+    opacity: 1;
+    transform: scale(0.95);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    background: white;
+    border-radius: 10px;
+}
+
+.checkbox-label {
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Стили для кастомного чекбокса */
+.custom-checkbox {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Скрываем стандартный чекбокс */
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Внешний круг */
+.checkbox-outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+/* Внутренний круг (появляется при нажатии) */
+.checkbox-inner {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    background-color: rgb(65, 65, 65);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    opacity: 0;
+}
+
+/* Состояние checked */
+.custom-checkbox input:checked+.checkbox-outer {
+    border-color: rgb(65, 65, 65);
+}
+
+.custom-checkbox input:checked+.checkbox-outer .checkbox-inner {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Анимация при нажатии */
+.custom-checkbox input:active+.checkbox-outer {
+    transform: scale(0.95);
+}
+
+.custom-checkbox input:active+.checkbox-outer .checkbox-inner {
+    transform: scale(0.9);
+}
+
+/* Фокус состояние для доступности */
+.custom-checkbox input:focus+.checkbox-outer {
+    box-shadow: 0 0 0 3px rgba(65, 65, 65, 0.2);
+}

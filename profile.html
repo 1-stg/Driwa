@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="web/css/profile.css">
     <script src="web/js/car_carts.js" defer></script>
     <script src="web/js/chat.js" defer></script>
+    <script src="web/js/profile.js" defer></script>
 </head>
 
 <body>
@@ -58,10 +59,19 @@
             </div>
             <div class="ads">
                 <button class="ads__body">
-                    <h2 class="ads__body__title">Мои объявления:</h2>
                     <img class="ads__body__img" src="web/images/svg/add_ads.svg" alt="Добавить объявление">
                     <p class="ads__body-p">Добавить объявление</p>
                 </button>
+            </div>
+        </div>
+        <h2 class="p-4">Ваши объявления:</h2>
+        <div class="container mb-3">
+            <div id="cars-container" class="row g-2 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4">
+            </div>
+
+            <div id="no-cars-message" class="text-center mt-5 d-none">
+                <h3>Здесь будут ваши объявления</h3>
+                <!-- <p>Тест</p> -->
             </div>
         </div>
     </main>

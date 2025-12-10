@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIWA - Создание объявления</title>
+    <link href="web\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="web\css\adCreate.css">
+
+</head>
+
+<body>
+    <main class="p-2 container">
+        <div class="row row-cols-1 g-2">
+            <div class="col">
+                <h2>Опишити свой автомобиль:</h2>
+            </div>
+
+            <div class="col">
+                <div class="container p-4 body__fields">
+                    <div class="row g-2 row-cols-1 row-cols-md-2 row-cols-xxl-3">
+                        <div class="col">
+                            <input class="adCreate__input" name="mark" required type="text" placeholder="Марка"
+                                required>
+                        </div>
+                        <div class="col">
+                            <input class="adCreate__input" name="model" required type="text" placeholder="Модель"
+                                required>
+                        </div>
+                        <div class="col">
+                            <input class="adCreate__input" name="Year" required type="text" placeholder="Год" required>
+                        </div>
+                        <div class="col">
+                            <input class="adCreate__input" name="price" required type="text" placeholder="Цена"
+                                required>
+                        </div>
+                        <div class="col">
+                            <input class="adCreate__input" name="mileage" required type="text" placeholder="Пробег"
+                                required>
+                        </div>
+                        <div class="col">
+                            <input class="adCreate__input" name="ownersCount" required type="text"
+                                placeholder="Количество владельцев" required>
+                        </div>
+                        <div class="col">
+                            <input class="adCreate__input" name="gearBox" required type="text"
+                                placeholder="Коробка передач" required>
+                        </div>
+                        <div class="col">
+                            <input class="adCreate__input" name="color" required type="text" placeholder="Цвет"
+                                required>
+                        </div>
+                        <div class="col">
+                            <input class="adCreate__input" name="engine" required type="text" placeholder="Двигатель"
+                                required>
+                        </div>
+                        <div class="col">
+                            <input class="adCreate__input" name="driveShaft" required type="text" placeholder="Привод"
+                                required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="container p-4 body__fields">
+                    <div class="row row-cols-1">
+                        <div class="col">
+                            <h3>Фото</h3>
+                        </div>
+                        <div class="col image__field__container">
+                            <div class="image__field">
+                                <img src="web\images\svg\photo.svg" alt="">
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <div class="checkbox-outer">
+                                        <div class="checkbox-inner"></div>
+                                    </div>
+                                </label>
+                                <span class="checkbox-label">Круглый чекбокс</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="web\bootstrap\js\bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -43,7 +43,7 @@ const cars = [
     'gearbox': "Роботизированная",
     'color': "Серый",
     'engine': '550 л.с., 5.2 л, Бензин',
-    'driveShaft': 'Полный'
+    'driveShaft': 'Полный',
   },
   {
     'id': 2,
