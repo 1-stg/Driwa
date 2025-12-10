@@ -199,7 +199,8 @@ h2 {
 }
 
 .sub-img-container.active {
-    border: 3px solid rgb(65,65,65);
+    outline: 4px dashed rgb(0, 0, 0);
+    outline-offset: 2px;
     transform: translateY(-2px);
 }
 
@@ -225,7 +226,7 @@ h2 {
 }
 
 .more-images:hover {
-    background: linear-gradient(135deg, #000000, #2c5aa0);
+    background: linear-gradient(135deg, #000000, #000000);
 }
 
 .options-button-container {
