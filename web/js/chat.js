@@ -136,9 +136,9 @@ function scrollToBottom() {
 
 function renderMessages(userId) {
   if (!chatFrame || !chatMessages[userId]) return;
-  
+
   chatFrame.innerHTML = '';
-  
+
   chatMessages[userId].forEach(msg => {
     if (msg.type === 'left') {
       chatFrame.innerHTML += `<div class="modal__body__right__message__left">
@@ -157,14 +157,14 @@ function renderMessages(userId) {
 const openChatWithUser = (userName, userId) => {
   isContactsMode = false;
   currentChatUser = { name: userName, id: userId };
-  
+
   chatUserName.textContent = userName;
-  
+
   contactsMode.classList.remove('active');
   chatMode.classList.add('active');
-  
+
   renderMessages(userId);
-  
+
   if (messageInput) {
     messageInput.focus();
   }
@@ -174,18 +174,20 @@ const openChatWithUser = (userName, userId) => {
 const backToContacts = () => {
   isContactsMode = true;
   currentChatUser = null;
-  
+
   chatMode.classList.remove('active');
   contactsMode.classList.add('active');
 }
 
 const chat = () => {
   chatNode.classList.remove(`d-none`);
-  
+  bodyNode.classList.add(`body__modal`);
+
+
   requestAnimationFrame(() => {
     chatNode.classList.add('active');
     chatModalNode.classList.add('chat__modal__display');
-    
+
     if (!isContactsMode) {
       backToContacts();
     }
@@ -197,15 +199,16 @@ const closeChat = () => {
     backToContacts();
     return;
   }
-  
+
   chatModalNode.classList.remove('chat__modal__display');
   chatNode.classList.remove('active');
-  
+
   const onTransitionEnd = () => {
     chatNode.classList.add(`d-none`);
     chatNode.removeEventListener('transitionend', onTransitionEnd);
+    bodyNode.classList.remove(`body__modal`);
   };
-  
+
   chatNode.addEventListener('transitionend', onTransitionEnd);
 }
 
@@ -217,21 +220,21 @@ const sendMessage = () => {
   if (text === '') return;
 
   const userId = currentChatUser.id;
-  
+
   if (!chatMessages[userId]) {
     chatMessages[userId] = [];
   }
-  
+
   chatMessages[userId].push({
     type: 'right',
     time: formatTime(),
     text: text
   });
-  
+
   messageInput.value = '';
-  
+
   renderMessages(userId);
-  
+
   scrollToBottom();
 }
 

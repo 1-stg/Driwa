@@ -32,6 +32,8 @@ const cars = [
   {
     'id': 1,
     'images': ["web/images/png/audi_r8.png", "web/images/png/audi_r8_2.jpg", "web/images/png/audi_r8_3.jpg"],
+    'mark': "Audi",
+    'model': "R8",
     'title': "Audi R8",
     'price': "6.000.000",
     'mileage': "10.000",
@@ -45,6 +47,8 @@ const cars = [
   {
     'id': 2,
     'images': ["web/images/png/bmw_m4.png", "web/images/png/bmw_m4_2.jpg"],
+    'mark': "Bmw",
+    'model': "M4",
     'title': "Bmw M4",
     'price': "4.000.000",
     'mileage': "50.000",
@@ -58,6 +62,8 @@ const cars = [
   {
     'id': 3,
     'images': ["web/images/png/toyota_rav4.png"],
+    'mark': "Toyota",
+    'model': "RAV4",
     'title': "Toyota RAV4",
     'price': "10.000.000",
     'mileage': "30.000",
@@ -71,6 +77,8 @@ const cars = [
   {
     'id': 4,
     'images': ["web/images/png/mclaren_720s.png"],
+    'mark': "McLaren",
+    'model': "720S",
     'title': "McLaren 720S",
     'price': "20.000.000",
     'mileage': "1.000",
@@ -84,7 +92,9 @@ const cars = [
   {
     'id': 5,
     'images': ["web/images/png/porsche_panamera.png"],
-    'title': "Porsche",
+    'mark': "Porsche",
+    'model': "Panamera",
+    'title': "Porsche Panamera",
     'price': "10.000.000",
     'mileage': "45.000",
     'year': "2021",
@@ -97,6 +107,8 @@ const cars = [
   {
     'id': 6,
     'images': ["web/images/png/vaz_2107.png"],
+    'mark': "Lada (ВАЗ)",
+    'model': "2107",
     'title': "Lada (ВАЗ) 2107",
     'price': "100.000",
     'mileage': "200.000",
@@ -110,7 +122,9 @@ const cars = [
   {
     'id': 7,
     'images': ["web/images/png/nissan_skyline.png"],
-    'title': "Nissan Skyline",
+    'mark': "Nissan",
+    'model': "Skyline R34",
+    'title': "Nissan Skyline R34",
     'price': "1.500.000",
     'mileage': "131.000",
     'year': "1998",
@@ -123,6 +137,8 @@ const cars = [
   {
     'id': 8,
     'images': ["web/images/png/audi_r8_2.jpg", "web/images/png/audi_r8_3.jpg"],
+    'mark': "Audi",
+    'model': "R8",
     'title': "Audi R8",
     'price': "6.000.000",
     'mileage': "10.000",
@@ -370,6 +386,7 @@ function openFavorite() {
   renderFavoriteCars();
   modalBackgroundNode.classList.toggle(`d-none`);
   setTimeout(() => {
+    bodyNode.classList.add(`body__modal`);
     favoritModalNode.classList.toggle(`is-visible`);
   }, 0);
 }
@@ -377,6 +394,7 @@ function openFavorite() {
 function closeFavorite() {
   favoritModalNode.classList.remove(`is-visible`);
   setTimeout(() => {
+    bodyNode.classList.remove(`body__modal`);
     modalBackgroundNode.classList.toggle(`d-none`);
   }, 300)
 }
