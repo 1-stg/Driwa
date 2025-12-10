@@ -229,15 +229,23 @@ h2 {
 }
 
 .options-button-container {
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .options__container {
     padding: 30px;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
     border-radius: 20px;
     background: white;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
     border: 1px solid #eee;
+}
+
+.container, .container-sm {
+    max-width: none;
 }
 
 .options-car-details-item {
@@ -311,7 +319,7 @@ h2 {
 
 @media (max-width: 992px) {
     .car-details {
-        padding: 15px;
+        padding: 0 20px;
     }
 
     .main-img-container {
@@ -353,10 +361,15 @@ h2 {
 
     .options__container {
         padding: 20px;
+        padding-bottom: 0;
     }
 
     .options-car-details-item {
         padding: 15px;
+    }
+    .car-details-photos-sub-container {
+        display: none;
+        visibility: none;
     }
 }
 

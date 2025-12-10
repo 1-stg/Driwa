@@ -1,122 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="web\images\svg\favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="web/images/svg/favicon.svg" type="image/svg+xml">
   <title>DRIWA - Регистрация</title>
   <link rel="stylesheet" href="web/css/styles.css">
   <link rel="stylesheet" href="web/css/forms.css" />
 </head>
 
 <body>
-  <main>
-    <header class="forms-header">
-      <a href="index.html"><img src="web\images\svg\logo_black.svg" alt="На главную" /></a>
-    </header>
-    <main>
-      <div class="form-container">
-        <form action="" class="form-style-reg">
-          <h1>Регистрация</h1>
-          <div class="input-container-reg">
-            <input type="text" name="login" minlength="2" maxlength="50" placeholder="Логин" required>
-            <img src="web\images\svg\user_form.svg" alt="Логин">
-          </div>
-          <div class="input-container-reg">
-            <input type="email" name="email" minlength="5" maxlength="50" placeholder="Почта" required>
-            <img src="web\images\svg\mail.svg" alt="Почта">
-          </div>
-          <div class="input-container-reg">
-            <input type="password" name="password" minlength="6" maxlength="50" placeholder="Пароль" required>
-            <img src="web\images\svg\key.svg" alt="Пароль">
-          </div>
-          <div class="input-container-reg">
-            <input type="password" name="password_repeat" minlength="6" maxlength="50" placeholder="Повторите пароль"
-              required>
-            <img src="web\images\svg\password_repeat.svg" alt="Повторите пароль">
-          </div>
+  <header class="forms-header">
+    <a href="index.html"><img src="web/images/svg/logo_black.svg" alt="На главную" /></a>
+  </header>
 
-          <div class="form-style-item checkbox-container">
-            <input type="checkbox" id="remember" class="remember-checkbox" />
-            <label for="remember" class="remember-label">
-              <span class="checkbox-custom"></span>
-              Запомнить меня
-            </label>
-          </div>
+  <main class="forms-main">
+    <div class="form-container">
+      <form class="form-style form-style-reg" action="#" method="post">
+        <h1>Регистрация</h1>
 
-          <button type="button" id="button-redirect">Зарегистрироваться</button>
-        </form>
-      </div>
-      <div class="form-link">
-        <a href="auth.html">Есть аккаунт?</a>
-      </div>
-    </main>
+        <div class="input-container">
+          <input type="text" name="login" minlength="2" maxlength="50" placeholder="Логин" required>
+          <img src="web/images/svg/user_form.svg" alt="Логин">
+        </div>
 
+        <div class="input-container">
+          <input type="email" name="email" minlength="5" maxlength="50" placeholder="Почта" required>
+          <img src="web/images/svg/mail.svg" alt="Почта">
+        </div>
 
-    <script src="web\js\script.js"></script>
+        <div class="input-container">
+          <input type="password" name="password" minlength="6" maxlength="50" placeholder="Пароль" required>
+          <img src="web/images/svg/key.svg" alt="Пароль">
+        </div>
+
+        <div class="input-container">
+          <input type="password" name="password_repeat" minlength="6" maxlength="50" placeholder="Повторите пароль"
+            required>
+          <img src="web/images/svg/password_repeat.svg" alt="Повторите пароль">
+        </div>
+
+        <div class="checkbox-container">
+          <input type="checkbox" id="remember" class="remember-checkbox">
+          <label for="remember" class="remember-label">
+            <span class="checkbox-custom"></span>
+            Запомнить меня
+          </label>
+        </div>
+
+        <button type="submit" class="form-button">Зарегистрироваться</button>
+      </form>
+    </div>
+
+    <div class="form-link">
+      <a href="auth.html">Есть аккаунт?</a>
+    </div>
+  </main>
+
+  <script src="web/js/script.js"></script>
 </body>
 
 </html>
-
-
-
-<!-- <div class="auth-container">
-        <form class="form-style-reg" action="#" method="post">
-          <div class="form-style-item">
-            <h2>Регистрация</h2>
-          </div>
-
-          <div class="form-style-item">
-            <input
-              class="input-reg"
-              type="text"
-              name="login"
-              placeholder="Логин"
-            />
-          </div>
-
-          <div class="form-style-item">
-            <input
-              class="input-reg"
-              type="email"
-              name="email"
-              placeholder="Почта"
-            />
-          </div>
-
-          <div class="form-style-item">
-            <input
-              class="input-reg"
-              type="password"
-              name="password"
-              placeholder="Пароль"
-            />
-          </div>
-
-          <div class="form-style-item">
-            <input
-              class="input-reg"
-              type="password"
-              name="password_repeat"
-              placeholder="Повторите пароль"
-            />
-          </div>
-
-          <div class="form-style-item checkbox-container">
-            <input type="checkbox" id="remember" class="remember-checkbox" />
-            <label for="remember" class="remember-label">
-              <span class="checkbox-custom"></span>
-              Запомнить меня
-            </label>
-          </div>
-
-          <div class="form-style-item">
-            <button type="button" id="button-redirect">Войти</button>
-          </div>
-        </form>
-      </div>
-      <div class="form-link">
-        <a href="auth.html">Есть аккаунт?</a>
-      </div>
-    </main> -->

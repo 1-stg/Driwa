@@ -69,6 +69,7 @@ carHtml.innerHTML = `
     </div>
 
     <div class="options-button-container">
+    <button class="car-details-button" type="button">Написать</button>
         <div class="container options__container">
             <div class="row gx-3 row-cols-1 row-cols-lg-3 row-cols-xxl-2 text-center">
                 <!-- Пробег -->
@@ -126,7 +127,7 @@ carHtml.innerHTML = `
                 </div>
             </div>
         </div>
-        <button class="car-details-button" type="button">Написать</button>
+        
     </div>
 `;
 
