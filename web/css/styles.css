@@ -14,19 +14,13 @@
 
 body {
     scrollbar-gutter: stable;
-    width: 100vw;
-    padding-right: 20px;
+    width: 100%;
+    /* padding-right: 20px; */
     /* padding: 20px;  */
 }
 
-@media (max-width: 1200px) {
-     body {
-        padding-right: 0;
-    }
-}
-
 .body__modal {
-    overflow: hidden;
+    overflow: scroll;
 }
 
 h1,
@@ -963,7 +957,7 @@ footer {
     border-radius: 20px;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
-    
+
 }
 
 .is-visiblef {
@@ -1046,8 +1040,5 @@ footer {
     transition: all 0.1s ease-in-out;
     transform: scale(0.9);
 }
-
-
-
 
 /* Фильтры модальное окно конец */

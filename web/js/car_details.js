@@ -1,15 +1,14 @@
-// Получаем carId из URL
 const urlParams = new URLSearchParams(window.location.search);
 const carId = urlParams.get('car') ? parseInt(urlParams.get('car')) - 1 : 0;
 const carData = cars[carId];
 
-// Устанавливаем заголовок страницы
+
+
 let titleNode = document.querySelector('title');
 titleNode.innerHTML += ` - ${carData['title']}`;
 
 const carHtml = document.querySelector('.car-details');
 
-// Создаем HTML для слайдера
 carHtml.innerHTML = `
     <div class="photos-title">
         <div class="car-details-photos-container">
@@ -131,7 +130,6 @@ carHtml.innerHTML = `
     </div>
 `;
 
-// Инициализация слайдера
 function initSlider() {
     const mainImages = document.querySelectorAll('.main-img');
     const indicators = document.querySelectorAll('.slider-indicator');
@@ -143,31 +141,25 @@ function initSlider() {
     let currentIndex = 0;
     const totalImages = mainImages.length;
 
-    // Функция для обновления активного слайда
     function updateSlider(index) {
-        // Обновляем главные изображения
         mainImages.forEach((img, i) => {
             img.classList.toggle('active', i === index);
             img.style.display = i === index ? 'block' : 'none';
         });
 
-        // Обновляем индикаторы
         indicators.forEach((indicator, i) => {
             indicator.classList.toggle('active', i === index);
         });
 
-        // Обновляем миниатюры
         thumbnails.forEach((thumb, i) => {
             if (i < 3) {
                 thumb.classList.toggle('active', i === index);
             }
         });
 
-        // Обновляем кнопки навигации
         prevBtn.disabled = index === 0;
         nextBtn.disabled = index === totalImages - 1;
 
-        // Добавляем анимацию
         mainImages[index].classList.add('fade-in');
         setTimeout(() => {
             mainImages[index].classList.remove('fade-in');
@@ -176,7 +168,6 @@ function initSlider() {
         currentIndex = index;
     }
 
-    // События для кнопок навигации
     prevBtn.addEventListener('click', () => {
         if (currentIndex > 0) {
             updateSlider(currentIndex - 1);
@@ -189,28 +180,24 @@ function initSlider() {
         }
     });
 
-    // События для индикаторов
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => {
             updateSlider(index);
         });
     });
 
-    // События для миниатюр
     thumbnails.forEach((thumbnail, index) => {
         thumbnail.addEventListener('click', () => {
             updateSlider(index);
         });
     });
 
-    // Событие для кнопки "Ещё фото"
     if (moreImagesBtn) {
         moreImagesBtn.addEventListener('click', () => {
-            updateSlider(3); // Переходим к 4-му изображению
+            updateSlider(3);
         });
     }
 
-    // Обработка клавиатуры
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
             prevBtn.click();
@@ -219,7 +206,6 @@ function initSlider() {
         }
     });
 
-    // Swipe для мобильных устройств
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -240,16 +226,13 @@ function initSlider() {
 
         if (Math.abs(diff) > swipeThreshold) {
             if (diff > 0 && currentIndex < totalImages - 1) {
-                // Свайп влево = следующее фото
                 updateSlider(currentIndex + 1);
             } else if (diff < 0 && currentIndex > 0) {
-                // Свайп вправо = предыдущее фото
                 updateSlider(currentIndex - 1);
             }
         }
     }
 
-    // Автопрокрутка (опционально)
     let autoplayInterval;
 
     function startAutoplay() {
@@ -257,7 +240,7 @@ function initSlider() {
             autoplayInterval = setInterval(() => {
                 const nextIndex = (currentIndex + 1) % totalImages;
                 updateSlider(nextIndex);
-            }, 5000); // Меняем каждые 5 секунд
+            }, 5000);
         }
     }
 
@@ -267,22 +250,17 @@ function initSlider() {
         }
     }
 
-    // Останавливаем автопрокрутку при взаимодействии
     sliderContainer.addEventListener('mouseenter', stopAutoplay);
     sliderContainer.addEventListener('mouseleave', startAutoplay);
     sliderContainer.addEventListener('touchstart', stopAutoplay);
 
-    // Начинаем автопрокрутку
     startAutoplay();
 
-    // Инициализируем первый слайд
     updateSlider(0);
 }
 
-// Инициализируем слайдер после загрузки DOM
 document.addEventListener('DOMContentLoaded', initSlider);
 
-// Обработка загрузки изображений
 document.querySelectorAll('img').forEach(img => {
     img.addEventListener('load', function () {
         this.classList.remove('image-loading');

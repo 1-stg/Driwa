@@ -53,7 +53,7 @@ let filtersButton = document.querySelector(`.filter-button`);
 exitButton = document.querySelector(`.filter-modal__header button`);
 let filtersBackgroundNode = document.querySelector(`.filter-modal__background`);
 let filtersModalNode = document.querySelector('.filter-modal');
-let bodyNode = document.querySelector(`body`);
+bodyNode = document.querySelector(`body`);
 let filterSearchButton = document.querySelector(`#filterSearchButton`);
 
 function openFilters() {

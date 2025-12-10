@@ -27,6 +27,7 @@ let favoritModalNode = document.querySelector(`.favorite__modal`);
 exitButton = document.querySelector(`#exitButton`);
 let favoritesContainer = document.querySelector(`.favorites-container`);
 let emptyFavorites = document.querySelector(`#empty-favorites`);
+let bodyNode = document.querySelector(`body`);
 
 const cars = [
   {
