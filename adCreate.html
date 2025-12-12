@@ -7,15 +7,48 @@
     <title>DRIWA - Создание объявления</title>
     <link href="web\bootstrap\css\bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="web\css\adCreate.css">
+    <link rel="stylesheet" href="web\css\styles.css">
     <script src="web\js\adCreate.js" defer></script>
 
 </head>
 
 <body>
+    <header>
+        <nav>
+            <div class="header-left">
+                <li>
+                    <a href="index.html"><img class="header-img" src="web\images\svg\logo_black.svg"
+                            alt="Главная" /></a>
+                </li>
+            </div>
+            <div class="header-right">
+                <li>
+                    <img id="chatButton" class="header-img" src="web\images\svg\chat.svg" alt="Чаты" />
+                </li>
+                <li>
+                    <img id="favorite-button" class="header-img" src="web\images\svg\favorite.svg" alt="Избранные" />
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="button-clear" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img class="header-img" src="web\images\svg\profile.svg" alt="Профиль" />
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="reg.html">Зарегистрироваться</a></li>
+                            <li><a class="dropdown-item" href="auth.html">Войти</a></li>
+                            <li><a class="dropdown-item" href="profile.html">Профиль</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </div>
+        </nav>
+    </header>
+
     <main class="p-2 container">
         <div class="row row-cols-1 g-2">
             <div class="col">
-                <h2>Опишити свой автомобиль:</h2>
+                <h2>Опишите свой автомобиль:</h2>
             </div>
 
             <div class="col">
@@ -136,14 +169,16 @@
                 </div>
             </div>
 
-            <div class="col p-4 container body__fields">
-                <div class="row row-cols-1">
-                    <div class="col">
-                        <h2>Цена:</h2>
-                    </div>
-                    <div class="col">
-                        <input class="adCreate__input" name="CarPrice" required type="text" placeholder="1 000 000"
-                            required>
+            <div class="col">
+                <div class="p-4 container body__fields">
+                    <div class="row g-2 row-cols-1">
+                        <div class="col">
+                            <h2>Цена:</h2>
+                        </div>
+                        <div class="col">
+                            <input class="adCreate__input" name="CarPrice" required type="text" placeholder="1 000 000"
+                                required>
+                        </div>
                     </div>
                 </div>
             </div>
