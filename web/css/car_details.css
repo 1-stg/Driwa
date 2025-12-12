@@ -252,13 +252,13 @@ h2 {
 .options-car-details-item {
     padding: 20px;
     border-radius: 12px;
-    background: #f8fafc;
+    background: rgba(199, 199, 199, 0.151);
     transition: all 0.3s ease;
     height: 100%;
 }
 
 .options-car-details-item:hover {
-    background: #f0f4f8;
+    background: rgb(228, 228, 228);
     transform: translateY(-2px);
 }
 
