@@ -403,7 +403,7 @@ footer {
     width: 40%;
     padding-top: 20px;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .is-visible {

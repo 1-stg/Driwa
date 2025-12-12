@@ -68,7 +68,7 @@ carHtml.innerHTML = `
     </div>
 
     <div class="options-button-container">
-    <button class="car-details-button" type="button">Написать</button>
+    <button id="buttomNewMessage" class="car-details-button" type="button">Написать</button>
         <div class="container options__container">
             <div class="row gx-3 row-cols-1 row-cols-lg-3 row-cols-xxl-2 text-center">
                 <!-- Пробег -->
@@ -276,3 +276,7 @@ document.querySelectorAll('img').forEach(img => {
         img.classList.add('image-loading');
     }
 });
+
+
+const newMessageButton = document.querySelector(`#buttomNewMessage`);
+newMessageButton.addEventListener(`click`, chat);
