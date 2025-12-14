@@ -2,12 +2,11 @@ const urlParams = new URLSearchParams(window.location.search);
 const carId = urlParams.get('car') ? parseInt(urlParams.get('car')) - 1 : 0;
 const carData = cars[carId];
 
-
-
 let titleNode = document.querySelector('title');
 titleNode.innerHTML += ` - ${carData['title']}`;
 
 const carHtml = document.querySelector('.car-details');
+const hasMultipleImages = carData['images'].length > 1;
 
 carHtml.innerHTML = `
     <div class="photos-title">
@@ -21,41 +20,41 @@ carHtml.innerHTML = `
                 `).join('')}
             </div>
             
-            <!-- Навигация слайдера -->
-            <div class="slider-nav">
-                <button class="slider-prev" aria-label="Предыдущее фото">‹</button>
-                <button class="slider-next" aria-label="Следующее фото">›</button>
-            </div>
-            
-            <!-- Индикаторы слайдера -->
-            <div class="slider-indicators">
-                ${carData['images'].map((_, index) => `
-                    <div class="slider-indicator ${index === 0 ? 'active' : ''}" data-index="${index}"></div>
-                `).join('')}
-            </div>
-        </div>
-        
-        <!-- Миниатюры для десктопа -->
-        <div class="car-details-photos-sub-container">
-            ${carData['images'].slice(0, 3).map((img, index) => `
-                <div class="sub-img-container ${index === 0 ? 'active' : ''}" data-index="${index}">
-                    <img class="sub-img" 
-                         src="${img || carData['images'][0] || 'web/images/svg/base_photo.svg'}" 
-                         alt="${carData['title']} - миниатюра ${index + 1}"
-                         loading="lazy">
+            ${hasMultipleImages ? `
+                <div class="slider-nav">
+                    <button class="slider-prev" aria-label="Предыдущее фото">‹</button>
+                    <button class="slider-next" aria-label="Следующее фото">›</button>
                 </div>
-            `).join('')}
-            
-            <!-- Если есть больше 3 изображений, показываем индикатор -->
-            ${carData['images'].length > 3 ? `
-                <div class="sub-img-container more-images" data-index="3">
-                    <div class="sub-img more-overlay">
-                        <span>+${carData['images'].length - 3}</span>
-                        <p>Ещё фото</p>
-                    </div>
+                
+                <div class="slider-indicators">
+                    ${carData['images'].map((_, index) => `
+                        <div class="slider-indicator ${index === 0 ? 'active' : ''}" data-index="${index}"></div>
+                    `).join('')}
                 </div>
             ` : ''}
         </div>
+
+        ${hasMultipleImages ? `
+            <div class="car-details-photos-sub-container">
+                ${carData['images'].slice(0, 3).map((img, index) => `
+                    <div class="sub-img-container ${index === 0 ? 'active' : ''}" data-index="${index}">
+                        <img class="sub-img" 
+                             src="${img || carData['images'][0] || 'web/images/svg/base_photo.svg'}" 
+                             alt="${carData['title']} - миниатюра ${index + 1}"
+                             loading="lazy">
+                    </div>
+                `).join('')}
+                
+                ${carData['images'].length > 3 ? `
+                    <div class="sub-img-container more-images" data-index="3">
+                        <div class="sub-img more-overlay">
+                            <span>+${carData['images'].length - 3}</span>
+                            <p>Ещё фото</p>
+                        </div>
+                    </div>
+                ` : ''}
+            </div>
+        ` : ''}
         
         <div class="title-price">
             <div class="title">
@@ -68,7 +67,7 @@ carHtml.innerHTML = `
     </div>
 
     <div class="options-button-container">
-    <button id="buttomNewMessage" class="car-details-button" type="button">Написать</button>
+        <button id="buttomNewMessage" class="car-details-button" type="button">Написать</button>
         <div class="container options__container">
             <div class="row gx-3 row-cols-1 row-cols-lg-3 row-cols-xxl-2 text-center">
                 <!-- Пробег -->
@@ -126,7 +125,6 @@ carHtml.innerHTML = `
                 </div>
             </div>
         </div>
-        
     </div>
 `;
 
@@ -138,8 +136,17 @@ function initSlider() {
     const thumbnails = document.querySelectorAll('.sub-img-container:not(.more-images)');
     const moreImagesBtn = document.querySelector('.more-images');
 
-    let currentIndex = 0;
     const totalImages = mainImages.length;
+    const hasMultipleImages = totalImages > 1;
+
+    if (!hasMultipleImages) {
+        if (mainImages.length > 0) {
+            mainImages[0].style.display = 'block';
+        }
+        return;
+    }
+
+    let currentIndex = 0;
 
     function updateSlider(index) {
         mainImages.forEach((img, i) => {
@@ -151,14 +158,18 @@ function initSlider() {
             indicator.classList.toggle('active', i === index);
         });
 
-        thumbnails.forEach((thumb, i) => {
-            if (i < 3) {
-                thumb.classList.toggle('active', i === index);
-            }
-        });
+        if (thumbnails.length > 0) {
+            thumbnails.forEach((thumb, i) => {
+                if (i < 3) {
+                    thumb.classList.toggle('active', i === index);
+                }
+            });
+        }
 
-        prevBtn.disabled = index === 0;
-        nextBtn.disabled = index === totalImages - 1;
+        if (prevBtn && nextBtn) {
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === totalImages - 1;
+        }
 
         mainImages[index].classList.add('fade-in');
         setTimeout(() => {
@@ -168,29 +179,35 @@ function initSlider() {
         currentIndex = index;
     }
 
-    prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            updateSlider(currentIndex - 1);
-        }
-    });
-
-    nextBtn.addEventListener('click', () => {
-        if (currentIndex < totalImages - 1) {
-            updateSlider(currentIndex + 1);
-        }
-    });
-
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            updateSlider(index);
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                updateSlider(currentIndex - 1);
+            }
         });
-    });
 
-    thumbnails.forEach((thumbnail, index) => {
-        thumbnail.addEventListener('click', () => {
-            updateSlider(index);
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < totalImages - 1) {
+                updateSlider(currentIndex + 1);
+            }
         });
-    });
+    }
+
+    if (indicators.length > 0) {
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                updateSlider(index);
+            });
+        });
+    }
+
+    if (thumbnails.length > 0) {
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                updateSlider(index);
+            });
+        });
+    }
 
     if (moreImagesBtn) {
         moreImagesBtn.addEventListener('click', () => {
@@ -199,10 +216,12 @@ function initSlider() {
     }
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            prevBtn.click();
-        } else if (e.key === 'ArrowRight') {
-            nextBtn.click();
+        if (hasMultipleImages && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+            if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                updateSlider(currentIndex - 1);
+            } else if (e.key === 'ArrowRight' && currentIndex < totalImages - 1) {
+                updateSlider(currentIndex + 1);
+            }
         }
     });
 
@@ -211,16 +230,20 @@ function initSlider() {
 
     const sliderContainer = document.querySelector('.car-details-photos-container');
 
-    sliderContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
+    if (sliderContainer && hasMultipleImages) {
+        sliderContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
 
-    sliderContainer.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
+        sliderContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+    }
 
     function handleSwipe() {
+        if (!hasMultipleImages) return;
+
         const swipeThreshold = 50;
         const diff = touchStartX - touchEndX;
 
@@ -232,29 +255,6 @@ function initSlider() {
             }
         }
     }
-
-    let autoplayInterval;
-
-    function startAutoplay() {
-        if (totalImages > 1) {
-            autoplayInterval = setInterval(() => {
-                const nextIndex = (currentIndex + 1) % totalImages;
-                updateSlider(nextIndex);
-            }, 5000);
-        }
-    }
-
-    function stopAutoplay() {
-        if (autoplayInterval) {
-            clearInterval(autoplayInterval);
-        }
-    }
-
-    sliderContainer.addEventListener('mouseenter', stopAutoplay);
-    sliderContainer.addEventListener('mouseleave', startAutoplay);
-    sliderContainer.addEventListener('touchstart', stopAutoplay);
-
-    startAutoplay();
 
     updateSlider(0);
 }
@@ -271,12 +271,12 @@ document.querySelectorAll('img').forEach(img => {
         this.classList.remove('image-loading');
     });
 
-    // Добавляем класс загрузки
     if (!img.complete) {
         img.classList.add('image-loading');
     }
 });
 
-
 const newMessageButton = document.querySelector(`#buttomNewMessage`);
-newMessageButton.addEventListener(`click`, chat);
+if (newMessageButton) {
+    newMessageButton.addEventListener(`click`, chat);
+}

@@ -91,21 +91,13 @@ header {
 
 .input-container img {
     position: absolute;
-    right: 10px;
+    right: 8px;
     top: 50%;
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
     pointer-events: none;
     opacity: 0.8;
-}
-
-.form-style-reg {
-    /* min-height: 580px; */
-}
-
-.form-style-auth {
-    /* min-height: 480px; */
 }
 
 .checkbox-container {
